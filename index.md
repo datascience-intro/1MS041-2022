@@ -11,7 +11,7 @@ These notebooks contain the basic theory of how to work with Sagemath and python
 
 ### Individual SageMath Jupyter .ipynb lecture Notebooks
 
-These notebooks are numbered according to which lecture they coincide with
+These notebooks are numbered according to which lecture they coincide with and will be updated after the lectures. Before the lecture they can be considered preliminary.
 
 01. [Probability](01-Probability.md)
 02. [Random Variables](02-Random_Variables.md)

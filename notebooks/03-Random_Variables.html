@@ -16333,6 +16333,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Introduction-to-Data-Science:-A-Comp-Math-Stat-Approach"><a href="http://datascience-intro.github.io/1MS041-2022/">Introduction to Data Science: A Comp-Math-Stat Approach</a><a class="anchor-link" href="#Introduction-to-Data-Science:-A-Comp-Math-Stat-Approach">&#182;</a></h1><h2 id="1MS041,-2022">1MS041, 2022<a class="anchor-link" href="#1MS041,-2022">&#182;</a></h2><p>&copy;2022 Raazesh Sainudiin, Benny Avelin. <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0 International     (CC BY 4.0)</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Second-notebook-on-Random-variables">Second notebook on Random variables<a class="anchor-link" href="#Second-notebook-on-Random-variables">&#182;</a></h2><p>Lets take a look again at the spam dataset and look at our concepts there</p>
 
 </div>
@@ -16340,10 +16348,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;Utils.sage&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">Utils</span> <span class="kn">import</span> <span class="n">load_sms</span>
 <span class="n">sms_data</span> <span class="o">=</span> <span class="n">load_sms</span><span class="p">()</span>
 <span class="n">sms_data</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
@@ -16358,7 +16366,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -16391,7 +16399,7 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">interesting_words</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="s1">&#39;free&#39;</span><span class="p">,</span><span class="s1">&#39;prize&#39;</span><span class="p">])</span>
@@ -16406,7 +16414,7 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Z_obs</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
@@ -16422,7 +16430,7 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -16439,7 +16447,7 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Y_obs</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">sms_data</span><span class="p">]</span>
@@ -16456,7 +16464,7 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -16473,12 +16481,13 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">F_X_12</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">F_X_12</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">TF10</span> <span class="o">=</span> <span class="p">{</span><span class="kc">True</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-    <span class="k">return</span> <span class="n">mean</span><span class="p">([</span><span class="n">TF10</span><span class="p">[(</span><span class="n">x1</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x2</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="k">for</span> <span class="n">x1</span><span class="p">,</span><span class="n">x2</span> <span class="ow">in</span> <span class="nb">zip</span> <span class="p">(</span><span class="n">Y_obs</span><span class="p">,</span><span class="n">Z_obs</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">TF10</span><span class="p">[(</span><span class="n">x1</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x2</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="k">for</span> <span class="n">x1</span><span class="p">,</span><span class="n">x2</span> <span class="ow">in</span> <span class="nb">zip</span> <span class="p">(</span><span class="n">Y_obs</span><span class="p">,</span><span class="n">Z_obs</span><span class="p">)])</span>
 </pre></div>
 
     </div>
@@ -16496,12 +16505,12 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">x2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">RR</span><span class="p">(</span><span class="n">F_X_12</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">))),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;,</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">F_X_12</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;,</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -16519,9 +16528,9 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.857501794687724,	0.865936826992103,	
+<pre>0.8575017946877244,	0.8659368269921034,	
 
-0.955132806891601,	1.00000000000000,	
+0.9551328068916008,	1.0,	
 
 </pre>
 </div>
@@ -16533,7 +16542,7 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Are they indepdentent? If so, then the JDF is just the product of the </span>
@@ -16551,7 +16560,7 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -16576,10 +16585,10 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">RR</span><span class="p">(</span><span class="n">mean</span><span class="p">([</span><span class="n">y</span> <span class="k">for</span> <span class="n">z</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Z_obs</span><span class="p">,</span><span class="n">Y_obs</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">y</span> <span class="k">for</span> <span class="n">z</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Z_obs</span><span class="p">,</span><span class="n">Y_obs</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -16592,13 +16601,13 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.812000000000000</pre>
+<pre>0.812</pre>
 </div>
 
 </div>
@@ -16617,11 +16626,11 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Or we can just compute it directly</span>
-<span class="n">RR</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_obs</span><span class="p">))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_obs</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -16634,13 +16643,13 @@ Hint: it is good to remove the upper/lower case of words so that we can also fin
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.134063173007897</pre>
+<pre>0.13406317300789664</pre>
 </div>
 
 </div>

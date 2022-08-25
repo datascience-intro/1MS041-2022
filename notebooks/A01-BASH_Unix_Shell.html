@@ -16333,6 +16333,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Introduction-to-Data-Science:-A-Comp-Math-Stat-Approach"><a href="http://datascience-intro.github.io/1MS041-2022/">Introduction to Data Science: A Comp-Math-Stat Approach</a><a class="anchor-link" href="#Introduction-to-Data-Science:-A-Comp-Math-Stat-Approach">&#182;</a></h1><h2 id="1MS041,-2022">1MS041, 2022<a class="anchor-link" href="#1MS041,-2022">&#182;</a></h2><p>&copy;2022 Raazesh Sainudiin, Benny Avelin. <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0 International     (CC BY 4.0)</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="01.-BASH-Unix-Shell">01. BASH Unix Shell<a class="anchor-link" href="#01.-BASH-Unix-Shell">&#182;</a></h1><ol>
 <li>Dropping into BASH (Unix Shell) and using basic Shell commands<ul>
 <li><code>pwd</code> --- print working directory</li>
@@ -16340,6 +16348,7 @@ div#notebook {
 <li><code>mkdir</code> --- make directory</li>
 <li><code>cd</code> --- change directory</li>
 <li><code>man ls</code> --- manual pages for any command</li>
+<li><code>head</code> --- show the first lines of a file</li>
 </ul>
 </li>
 <li>Grabbing files from the internet using <code>curl</code></li>
@@ -17041,243 +17050,6 @@ done</code></pre>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ASSIGNMENT-1,-PROBLEM-1,-POINTS-2">ASSIGNMENT 1, PROBLEM 1, POINTS 2<a class="anchor-link" href="#ASSIGNMENT-1,-PROBLEM-1,-POINTS-2">&#182;</a></h1><h3 id="Finding-out-the-number-of-lines-and-characters-in-a-file">Finding out the number of lines and characters in a file<a class="anchor-link" href="#Finding-out-the-number-of-lines-and-characters-in-a-file">&#182;</a></h3><p>Evaluate the following two cells by replacing <code>X</code> with the right command-line option to <code>wc</code> command in order to find:</p>
-<ol>
-<li>the number of lines in <code>data/earthquakes_small.csv</code> and </li>
-<li>the number of words in <code>data/earthquakes_small.csv</code> </li>
-</ol>
-<p>Finally, update the following cell by replacing <code>XXX</code> with the right integer answers, respectively, for:</p>
-<ol>
-<li><code>NumberOfLinesIn_earthquakes_small_csv_file</code> and </li>
-<li><code>NumberOfWordsIn_earthquakes_small_csv_file</code> </li>
-</ol>
-<p>Here is a brief synopsis of <code>wc</code> that you would get from running <code>man wc</code> as follows:</p>
-
-<pre><code>%%sh
-man wc</code></pre>
-
-<pre><code>WC(1)                     BSD General Commands Manual                    WC(1)
-
-NAME
-     wc -- word, line, character, and byte count
-
-SYNOPSIS
-     wc [-clmw] [file ...]
-
-DESCRIPTION
-     The wc utility displays the number of lines, words, and bytes contained in each input file, or standard input (if no file is specified) to the standard output.  A line is defined as a string of characters delimited by a &lt;newline&gt; character.  Characters beyond the final &lt;newline&gt; character will not be included in the line count.
-
-     A word is defined as a string of characters delimited by white space characters.  White space characters are the set of characters for which the iswspace(3) function returns true.  If more than one input file is specified, a line of cumulative counts for all the files is displayed on a separate line after the output for the last file.
-
-     The following options are available:
-
-     -c      The number of bytes in each input file is written to the standard output.  This will cancel out any prior usage of the -m option.
-
-     -l      The number of lines in each input file is written to the standard output.
-
-     -m      The number of characters in each input file is written to the standard output.  If the current locale does not support multibyte
-             characters, this is equivalent to the -c option.  This will cancel out any prior usage of the -c option.
-
-     -w      The number of words in each input file is written to the standard output.
-
-     When an option is specified, wc only reports the information requested by that option.  The order of output always takes the form of line, word, byte, and file name.  The default action is equivalent to specifying the -c, -l and -w options.</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ASSIGNMENT 1, PROBLEM 1, POINTS 2</span>
-<span class="o">%%</span><span class="k">sh</span>
-# replace X in the next line with the right option to find the number of lines
-wc -X data/earthquakes_small.csv
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-1-90a1f9066310&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span>
-<span class="ansi-red-fg">    %%sh</span>
-    ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ASSIGNMENT 1, PROBLEM 1, POINTS 2</span>
-<span class="o">%%</span><span class="k">sh</span>
-# replace X in the next line with the right option to find the number of words
-wc -X data/earthquakes_small.csv
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-1-a929ee0c7a3f&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span>
-<span class="ansi-red-fg">    %%sh</span>
-    ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ASSIGNMENT 1, PROBLEM 1, POINTS 2</span>
-<span class="c1"># write your answer below by replacing XXX don&#39;t modify anything else! </span>
-
-<span class="n">NumberOfLinesIn_earthquakes_small_csv_file</span> <span class="o">=</span> <span class="n">XXX</span>
-<span class="n">NumberOfWordsIn_earthquakes_small_csv_file</span> <span class="o">=</span> <span class="n">XXX</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ASSIGNMENT 1, SOLUTION 1, POINTS 2</span>
-<span class="n">NumberOfLinesIn_earthquakes_small_csv_file</span> <span class="o">=</span> <span class="mi">411</span>
-<span class="n">NumberOfWordsIn_earthquakes_small_csv_file</span> <span class="o">=</span> <span class="mi">418</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ASSIGNMENT 1, Test 1, POINTS 2</span>
-<span class="c1"># Evaluate this cell locally to make sure you have the answer as a non-negative integer</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">assert</span><span class="p">(</span><span class="n">NumberOfLinesIn_earthquakes_small_csv_file</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good! You have 0 or more lines as your answer. Hopefully it is the correct!&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try Again. You seem to not have a valid number of lines as your answer.&quot;</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">assert</span><span class="p">(</span><span class="n">NumberOfWordsIn_earthquakes_small_csv_file</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good! You have 0 or more words as your answer. Hopefully it is the correct!&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try Again. You seem to not have a valid number of words as your answer.&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ASSIGNMENT 1, TEST 1, POINTS 2</span>
-
-<span class="n">local_points</span><span class="o">=</span><span class="mi">0</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">assert</span><span class="p">(</span><span class="n">NumberOfLinesIn_earthquakes_small_csv_file</span><span class="o">==</span><span class="mi">411</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;You have not found the correct number of lines. Try again.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;You have the correct number of lines, congratulations!&quot;</span><span class="p">)</span>
-    <span class="n">local_points</span> <span class="o">+=</span>  <span class="mi">1</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of points you have scored for this problem so far = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">local_points</span><span class="p">))</span>
-    
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">assert</span><span class="p">(</span><span class="n">NumberOfWordsIn_earthquakes_small_csv_file</span><span class="o">==</span><span class="mi">418</span><span class="p">)</span>
-    <span class="c1"># print point for this problem</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;You have not found the correct number of words. Try again.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;You have the correct number of words, congratulations!&quot;</span><span class="p">)</span>
-    <span class="n">local_points</span> <span class="o">+=</span>  <span class="mi">1</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of points you have scored for this problem so far = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">local_points</span><span class="p">))</span>
-    
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>You have not found the correct number of lines. See the solution notebook.
-The number of points you have scored for this problem so far = 0
-You have not found the correct number of characters. See the solution notebook.
-The number of points you have scored for this problem so far = 0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     </div>
   </div>
