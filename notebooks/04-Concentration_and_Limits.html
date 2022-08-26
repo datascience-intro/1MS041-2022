@@ -16347,7 +16347,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -16374,15 +16374,17 @@ $$<p>We can see that this is at least true in the simulation below</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span> 
-<span class="k">def</span> <span class="nf">concentration</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">slider</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">IntSlider</span>
+<span class="nd">@interact</span> 
+<span class="k">def</span> <span class="nf">concentration</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">IntSlider</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">)):</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">10000</span><span class="p">))</span>
     <span class="n">means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(mean &gt; mu + 0.3 ) = </span><span class="si">%.5f</span><span class="s2"> &lt;= Chebychev </span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="o">+</span><span class="mf">0.3</span><span class="p">),(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">0.3</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)))</span>
-    <span class="n">show</span><span class="p">(</span><span class="n">histogram</span><span class="p">(</span><span class="n">means</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(mean &gt; mu + 0.3 ) = </span><span class="si">%.5f</span><span class="s2"> &lt;= Chebychev </span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="o">+</span><span class="mf">0.3</span><span class="p">),(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">0.3</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">means</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -16403,13 +16405,13 @@ $$<p>We can see that this is at least true in the simulation below</p>
 
  
  
-<div id="9caf161b-9229-428b-b598-e4c1bceb6ae3"></div>
+<div id="6b7e42f5-a6d0-4ac6-841c-6abbf97ae2fc"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#9caf161b-9229-428b-b598-e4c1bceb6ae3');
+var element = $('#6b7e42f5-a6d0-4ac6-841c-6abbf97ae2fc');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "a72ae232da824b099a444f8cafe5ac61", "version_major": 2, "version_minor": 0}
+{"model_id": "ce423529911c4d0095736eb6e79fd2dd", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -16432,15 +16434,16 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span> 
-<span class="k">def</span> <span class="nf">concentration</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">slider</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)):</span>
+<span class="k">def</span> <span class="nf">concentration</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">IntSlider</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">)):</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">10000</span><span class="p">))</span>
     <span class="n">means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(mean &gt; mu + 0.3 ) = </span><span class="si">%.5f</span><span class="s2"> &lt;= Hoeffding </span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="o">+</span><span class="mf">0.3</span><span class="p">),</span><span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="mf">0.3</span><span class="o">^</span><span class="mi">2</span><span class="p">)))</span>
-    <span class="n">show</span><span class="p">(</span><span class="n">histogram</span><span class="p">(</span><span class="n">means</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(mean &gt; mu + 0.3 ) = </span><span class="si">%.5f</span><span class="s2"> &lt;= Hoeffding </span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="o">+</span><span class="mf">0.3</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="mf">0.3</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">means</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -16461,13 +16464,13 @@ $$
 
  
  
-<div id="a104685f-fcbf-4e3c-a254-4a02ed60ff25"></div>
+<div id="9cca0997-d70f-452c-91fe-ebc15678e5f0"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#a104685f-fcbf-4e3c-a254-4a02ed60ff25');
+var element = $('#9cca0997-d70f-452c-91fe-ebc15678e5f0');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8f2cb445884240a58eda53de44f2ab46", "version_major": 2, "version_minor": 0}
+{"model_id": "68eb4588491e461d9d65aaaf193f03aa", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -16515,14 +16518,15 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span> 
-<span class="k">def</span> <span class="nf">concentration</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">slider</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="n">p</span><span class="o">=</span><span class="n">slider</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">FloatSlider</span>
+<span class="nd">@interact</span> 
+<span class="k">def</span> <span class="nf">concentration</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span><span class="n">p</span><span class="o">=</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)):</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
     <span class="n">means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">epsilon</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">ln</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.95</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">epsilon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.95</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;95</span><span class="si">%%</span><span class="s2"> confidence interval [</span><span class="si">%.2f</span><span class="s2">, </span><span class="si">%.2f</span><span class="s2">] for p=</span><span class="si">%.2f</span><span class="s2"> n=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">means</span><span class="o">-</span><span class="n">epsilon</span><span class="p">,</span><span class="n">means</span><span class="o">+</span><span class="n">epsilon</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
 
@@ -16544,13 +16548,13 @@ $$
 
  
  
-<div id="8c98e5a5-1501-4e9e-b4c6-6749545cca0f"></div>
+<div id="f2f28996-215a-440a-9cff-6e02dd9a22e5"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#8c98e5a5-1501-4e9e-b4c6-6749545cca0f');
+var element = $('#f2f28996-215a-440a-9cff-6e02dd9a22e5');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e71622a3a56847218fe5b2deecfa549b", "version_major": 2, "version_minor": 0}
+{"model_id": "ca773571fcf84786b5783c3a380df92e", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -16570,10 +16574,10 @@ var element = $('#8c98e5a5-1501-4e9e-b4c6-6749545cca0f');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;Utils.sage&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">Utils</span> <span class="kn">import</span> <span class="n">load_sms</span> 
 <span class="n">sms_data</span> <span class="o">=</span> <span class="n">load_sms</span><span class="p">()</span>
 <span class="n">sms_data</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
@@ -16588,7 +16592,7 @@ var element = $('#8c98e5a5-1501-4e9e-b4c6-6749545cca0f');
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[56]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -16607,7 +16611,7 @@ var element = $('#8c98e5a5-1501-4e9e-b4c6-6749545cca0f');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">interesting_words</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="s1">&#39;free&#39;</span><span class="p">,</span><span class="s1">&#39;prize&#39;</span><span class="p">])</span>
@@ -16631,11 +16635,11 @@ var element = $('#8c98e5a5-1501-4e9e-b4c6-6749545cca0f');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">epsilon_bernoulli</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">alpha</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">ln</span><span class="p">((</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -16645,11 +16649,11 @@ var element = $('#8c98e5a5-1501-4e9e-b4c6-6749545cca0f');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon_bernoulli</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Y_obs</span><span class="p">),</span><span class="mf">0.05</span><span class="p">)</span>
-<span class="n">mean_Y_obs</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">Y_obs</span><span class="p">)</span>
+<span class="n">mean_Y_obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_obs</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%.3f</span><span class="s2">,</span><span class="si">%.3f</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mean_Y_obs</span><span class="o">-</span><span class="n">epsilon</span><span class="p">,</span><span class="n">mean_Y_obs</span><span class="o">+</span><span class="n">epsilon</span><span class="p">))</span>
 </pre></div>
 
@@ -16690,7 +16694,7 @@ $$<p>but this requires you to estimate both things on the right, and give a regi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Y_mid_Z1</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">z</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Z_obs</span><span class="p">,</span><span class="n">Y_obs</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
@@ -16711,11 +16715,11 @@ $$<p>but this requires you to estimate both things on the right, and give a regi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon_bernoulli</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Y_mid_Z1</span><span class="p">),</span><span class="mf">0.05</span><span class="p">)</span>
-<span class="n">mean_Y_obs</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">Y_mid_Z1</span><span class="p">)</span>
+<span class="n">mean_Y_obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_mid_Z1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%.3f</span><span class="s2">,</span><span class="si">%.3f</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mean_Y_obs</span><span class="o">-</span><span class="n">epsilon</span><span class="p">,</span><span class="n">mean_Y_obs</span><span class="o">+</span><span class="n">epsilon</span><span class="p">))</span>
 </pre></div>
 
