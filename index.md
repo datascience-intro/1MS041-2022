@@ -20,3 +20,6 @@ These notebooks are numbered according to which lecture they coincide with and w
 * Unzip this into a folder that you will use as the base folder
 * Whenever you download the next lectures as `ipynb` files, you put them in the same place as `*.ipynb`, this way all pathways will be the same for all of us.
 
+### Assignment notebooks
+
+1. [Assignment_1](Assignment_1.md)
