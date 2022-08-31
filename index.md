@@ -5,6 +5,7 @@
 These notebooks contain the basic theory of how to work with Sagemath and python, that will be needed in this course.
 
 A01. [A01-BASH_Unix_Shell](A01-BASH_Unix_Shell.md)
+A01. [A01_fixed](A01_fixed.md)
 Ass. [Assignment_1](Assignment_1.md)
 
 ### Individual SageMath Jupyter .ipynb lecture Notebooks
