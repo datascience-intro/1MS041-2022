@@ -11,7 +11,6 @@ Ass. [Assignment_1](Assignment_1.md)
 
 These notebooks are numbered according to which lecture they coincide with and will be updated after the lectures. Before the lecture they can be considered preliminary.
 
-.i. [.ipynb_check](.ipynb_check.md)
 01. [01-Probability](01-Probability.md)
 02. [02-Random_Variables](02-Random_Variables.md)
 03. [03-Random_Variables](03-Random_Variables.md)
