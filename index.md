@@ -11,6 +11,7 @@ A01. [A01-BASH_Unix_Shell](A01-BASH_Unix_Shell.md)
 These notebooks are numbered according to which lecture they coincide with and will be updated after the lectures. Before the lecture they can be considered preliminary.
 
 01. [01-Probability](01-Probability.md)
+02. [02-ProbSS1](02-ProbSS1.md)
 02. [02-Random_Variables](02-Random_Variables.md)
 02. [02-Random_Variables_examples](02-Random_Variables_examples.md)
 03. [03-Random_Variables](03-Random_Variables.md)

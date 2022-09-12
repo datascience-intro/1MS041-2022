@@ -16,7 +16,7 @@ def load_sms():
 
     return lines
 
-def plotEMF(numRelFreqPairs):
+def plotEMF(numRelFreqPairs, force_display = True):
     import matplotlib.pyplot as plt
     import numpy as np
     numRelFreqPairs = np.array(numRelFreqPairs)
@@ -26,7 +26,8 @@ def plotEMF(numRelFreqPairs):
         kkey, kheight = k     # unpack tuple
         plt.vlines([kkey],0,kheight,linestyle=':')
 
-    plt.show()
+    if (force_display):
+        plt.show()
 
 def makeFreq(data_sequence):
     import numpy as np
@@ -53,7 +54,7 @@ def makeEDF(data_sequence):
 
     return edf
 
-def plotEDF(numRelFreqPairs):
+def plotEDF(numRelFreqPairs, force_display=True):
     import numpy as np
     if type(numRelFreqPairs) == list:
         numRelFreqPairs = np.array(numRelFreqPairs)
@@ -81,5 +82,6 @@ def plotEDF(numRelFreqPairs):
     #Title
     plt.title("Empirical Distribution Function")
 
-    # Force displaying
-    plt.show()
+    if (force_display):
+        # Force displaying
+        plt.show()
