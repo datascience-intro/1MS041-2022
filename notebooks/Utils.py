@@ -1,3 +1,8 @@
+def showURL(url, ht=600):
+    """Return an IFrame of the url to show in notebook with height ht"""
+    from IPython.display import IFrame
+    return IFrame(url, width='95%', height=ht)
+
 def load_sms():
     """
     A wrapper function to load the sms data
@@ -15,6 +20,16 @@ def load_sms():
         lines = [(line[1],hamspam[line[0]]) for line in reader]
 
     return lines
+
+def discrete_histogram(data,normed=False):
+    import numpy as np
+    bins, counts = np.unique(data,return_counts=True)
+    width = np.min(np.diff(bins))/4
+    import matplotlib.pyplot as plt
+    if (normed):
+        plt.bar(bins,counts/np.sum(counts),width=width)
+    else:
+        plt.bar(bins,counts,width=width)
 
 def plotEMF(numRelFreqPairs, force_display = True):
     import matplotlib.pyplot as plt

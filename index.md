@@ -14,6 +14,7 @@ These notebooks are numbered according to which lecture they coincide with and w
 02. [02-ProbSS1](02-ProbSS1.md)
 02. [02-Random_Variables](02-Random_Variables.md)
 02. [02-Random_Variables_examples](02-Random_Variables_examples.md)
+03. [03-ProbSS2](03-ProbSS2.md)
 03. [03-Random_Variables](03-Random_Variables.md)
 04. [04-Concentration_and_Limits](04-Concentration_and_Limits.md)
 
