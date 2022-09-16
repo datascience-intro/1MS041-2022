@@ -1,3 +1,8 @@
+def basic_stats(data):
+    import numpy as np
+    from scipy.stats import skew, kurtosis
+    print("mean: %.2f\tstd: %.2f\tskew: %.2f\tkurtosis: %.2f" % (np.mean(data),np.std(data),skew(data),kurtosis(data,fisher=False)))
+
 def showURL(url, ht=600):
     """Return an IFrame of the url to show in notebook with height ht"""
     from IPython.display import IFrame
