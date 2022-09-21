@@ -20,6 +20,8 @@ These notebooks are numbered according to which lecture they coincide with and w
 03. [03-ProbSS2](03-ProbSS2.md)
 03. [03-Random_Variables](03-Random_Variables.md)
 04. [04-Concentration_and_Limits](04-Concentration_and_Limits.md)
+05. [05-Limits](05-Limits.md)
+05. [05-Risk](05-Risk.md)
 
 ### Starting package
 * Download the [Starting package](Files/first_lecture_and_data.zip)
