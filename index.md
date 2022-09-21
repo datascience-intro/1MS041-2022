@@ -1,6 +1,9 @@
 ---
 ## Introduction to Data Science 1MS041
 
+You can download the Lecture notes [here](https://datascience-intro.github.io/1MS041-2022/Files/LectureNotes1MS041.pdf).
+
+
 ### Introductory SageMath Jupyter .ipynb Notebooks
 These notebooks contain the basic theory of how to work with Sagemath and python, that will be needed in this course.
 
