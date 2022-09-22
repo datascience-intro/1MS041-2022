@@ -74,17 +74,18 @@ def makeEDF(data_sequence):
 
     return edf
 
-def plotEDF(numRelFreqPairs, force_display=True):
+def emfToEdf(emf):
     import numpy as np
-    if type(numRelFreqPairs) == list:
-        numRelFreqPairs = np.array(numRelFreqPairs)
+    if (type(emf) == list):
+        emf = np.array(emf)
+    keys = emf[:,0]
+    frequencies = emf[:,1]
 
-    (keys,counts) = (numRelFreqPairs[:,0],numRelFreqPairs[:,1])
-    frequencies = counts/np.sum(counts)
-    emf = np.stack([keys,frequencies],axis=-1)
     cumFreqs = np.cumsum(frequencies)
     edf = np.stack([keys,cumFreqs],axis=-1)
+    return edf
 
+def plotEDF(edf,  force_display=True):
     #Plotting using matplotlib
     import matplotlib.pyplot as plt
 
@@ -93,6 +94,9 @@ def plotEDF(numRelFreqPairs, force_display=True):
     #plt.gca().spines['left'].set_position('zero')
     #plt.gca().spines['top'].set_visible(False)
     #plt.gca().spines['right'].set_visible(False)
+
+    keys = edf[:,0]
+    cumFreqs = edf[:,1]
 
     plt.scatter(keys,cumFreqs)
     plt.hlines(cumFreqs[:-1],keys[:-1],keys[1:])
