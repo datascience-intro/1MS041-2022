@@ -22,6 +22,7 @@ These notebooks are numbered according to which lecture they coincide with and w
 04. [04-Concentration_and_Limits](04-Concentration_and_Limits.md)
 05. [05-Limits](05-Limits.md)
 05. [05-Risk](05-Risk.md)
+06. [06-Fundamentals_of_estimation](06-Fundamentals_of_estimation.md)
 
 ### Starting package
 * Download the [Starting package](Files/first_lecture_and_data.zip)
