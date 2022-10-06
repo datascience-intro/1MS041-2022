@@ -32,3 +32,4 @@ These notebooks are numbered according to which lecture they coincide with and w
 ### Assignment notebooks
 
 1. [Assignment_1](Assignment_1.md)
+2. [Assignment_2](Assignment_2.md)
