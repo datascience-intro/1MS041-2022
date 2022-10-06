@@ -13090,7 +13090,31 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction-to-Data-Science"><a href="http://datascience-intro.github.io/1MS041-2022/">Introduction to Data Science</a><a class="anchor-link" href="#Introduction-to-Data-Science">&#182;</a></h1><h2 id="1MS041,-2022">1MS041, 2022<a class="anchor-link" href="#1MS041,-2022">&#182;</a></h2><p>&copy;2022 Raazesh Sainudiin, Benny Avelin. <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0 International     (CC BY 4.0)</a></p>
+<h1 id="Assignment-2-for-Course-1MS041">Assignment 2 for Course 1MS041<a class="anchor-link" href="#Assignment-2-for-Course-1MS041">&#182;</a></h1><p>Make         sure you pass the <code># ... Test</code> cells and
+ submit your solution notebook in the corresponding assignment on the course website. You can submit multiple times before the deadline         and your highest score will be used.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Assignment-2,-PROBLEM-1">Assignment 2, PROBLEM 1<a class="anchor-link" href="#Assignment-2,-PROBLEM-1">&#182;</a></h2><p>Maximum Points = 8</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Random-variable-generation-and-transformation">Random variable generation and transformation<a class="anchor-link" href="#Random-variable-generation-and-transformation">&#182;</a></h2><p>The purpose of this problem is to show that you can implement your own sampler, this will be built in the following three steps:</p>
+<ol>
+<li>[2p] Implement a Linear Congruential Generator where you tested out a good combination (a large $M$ with $a,b$ satisfying the Hull-Dobell (Thm 6.8)) of parameters. Follow the instructions in the code block.</li>
+<li>[2p] Using a generator construct random numbers from the uniform $[0,1]$ distribution.</li>
+<li>[4p] Using a uniform $[0,1]$ random generator, generate samples from </li>
+</ol>
+$$p_0(x) = \frac{\pi}{2}|\sin(2\pi x)|, \quad x \in [0,1] \enspace .$$<p>Using the <strong>Accept-Reject</strong> sampler (<strong>Algorithm 1</strong> in TFDS notes) with sampling density given by the uniform $[0,1]$ distribution.</p>
 
 </div>
 </div>
@@ -13100,7 +13124,413 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem1_LCG</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A linear congruential generator that generates pseudo random numbers according to size.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    -------------</span>
+<span class="sd">    size : an integer denoting how many samples should be produced</span>
+<span class="sd">    seed : the starting point of the LCG, i.e. u0 in the notes.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------------</span>
+<span class="sd">    out : a list of the pseudo random numbers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">XXX</span>
+    
+    <span class="k">return</span> <span class="n">XXX</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem1_uniform</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a generator and produces samples from the uniform [0,1] distribution according</span>
+<span class="sd">    to size.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    -------------</span>
+<span class="sd">    generator : a function of type generator(size,seed) and produces the same result as problem1_LCG, i.e. pseudo random numbers in the range {0,1,...,period-1}</span>
+<span class="sd">    period : the period of the generator</span>
+<span class="sd">    seed : the seed to be used in the generator provided</span>
+<span class="sd">    size : an integer denoting how many samples should be produced</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    --------------</span>
+<span class="sd">    out : a list of the uniform pseudo random numbers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">XXX</span>
+    
+    <span class="k">return</span> <span class="n">XXX</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem1_accept_reject</span><span class="p">(</span><span class="n">uniformGenerator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a generator that produces uniform pseudo random [0,1] numbers </span>
+<span class="sd">    and produces samples from (pi/2)*abs(sin(x*2*pi)) using an Accept-Reject</span>
+<span class="sd">    sampler with the uniform distribution as the proposal distribution</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    -------------</span>
+<span class="sd">    generator : a function of the type generator(size,seed) that produces uniform pseudo random</span>
+<span class="sd">    numbers from [0,1]</span>
+<span class="sd">    seed : the seed to be used in the generator provided</span>
+<span class="sd">    size : an integer denoting how many samples should be produced</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    --------------</span>
+<span class="sd">    out : a list of the pseudo random numbers with the specified distribution</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">XXX</span>
+    
+    <span class="k">return</span> <span class="n">XXX</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h4 id="Local-Test-for-Assignment-2,-PROBLEM-1">Local Test for Assignment 2, PROBLEM 1<a class="anchor-link" href="#Local-Test-for-Assignment-2,-PROBLEM-1">&#182;</a></h4><p>Evaluate cell below to make sure your answer is valid.                             You <strong>should not</strong> modify anything in the cell below when evaluating it to do a local test of                             your solution.
+You may need to include and evaluate code snippets from lecture notebooks in cells above to make the local test work correctly sometimes (see error messages for clues). This is meant to help you become efficient at recalling materials covered in lectures that relate to this problem. Such local tests will generally not be available in the exam.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># If you managed to solve all three parts you can test the following code to see if it runs</span>
+<span class="c1"># you have to change the period to match your LCG though, this is marked as XXX.</span>
+<span class="c1"># It is a very good idea to check these things using the histogram function in sagemath</span>
+<span class="c1"># try with a larger number of samples, up to 10000 should run</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LCG output: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">problem1_LCG</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">period</span> <span class="o">=</span> <span class="mi">2147483648</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Uniform sampler </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">problem1_uniform</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">problem1_LCG</span><span class="p">,</span> <span class="n">period</span> <span class="o">=</span> <span class="n">period</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">uniform_sampler</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">size</span><span class="p">,</span><span class="n">seed</span><span class="p">:</span> <span class="n">problem1_uniform</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">problem1_LCG</span><span class="p">,</span> <span class="n">period</span> <span class="o">=</span> <span class="n">period</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accept-Reject sampler </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">problem1_accept_reject</span><span class="p">(</span><span class="n">uniformGenerator</span> <span class="o">=</span> <span class="n">uniform_sampler</span><span class="p">,</span><span class="n">n_iterations</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># If however you did not manage to implement either part 1 or part 2 but still want to check part 3, you can run the code below</span>
+
+<span class="k">def</span> <span class="nf">testUniformGenerator</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">seed</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accept-Reject sampler </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">problem1_accept_reject</span><span class="p">(</span><span class="n">uniformGenerator</span><span class="o">=</span><span class="n">testUniformGenerator</span><span class="p">,</span> <span class="n">n_iterations</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Assignment-2,-PROBLEM-2">Assignment 2, PROBLEM 2<a class="anchor-link" href="#Assignment-2,-PROBLEM-2">&#182;</a></h2><p>Maximum Points = 8</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Markovian-travel">Markovian travel<a class="anchor-link" href="#Markovian-travel">&#182;</a></h2><p>The dataset <code>Travel Dataset - Datathon 2019</code> is a simulated dataset designed to mimic real corporate travel systems -- focusing on flights and hotels. The file is at <code>data/flights.csv</code> in the same folder as <code>Exam.ipynb</code>, i.e. you can use the path <code>data/flights.csv</code> from the notebook to access the file.</p>
+<ol>
+<li>[2p] In the first code-box <ol>
+<li>Load the csv from file <code>data/flights.csv</code></li>
+<li>Fill in the value of the variables as specified by their names.</li>
+</ol>
+</li>
+<li>[2p] In the second code-box your goal is to estimate a Markov chain transition matrix for the travels of these users. For example, if we enumerate the cities according to alphabetical order, the first city <code>'Aracaju (SE)'</code> would correspond to $0$. Each row of the file corresponds to one flight, i.e. it has a starting city and an ending city. We model this as a stationary Markov chain, i.e. each user's travel trajectory is a realization of the Markov chain, $X_t$. Here, $X_t$ is the current city the user is at, at step $t$, and $X_{t+1}$ is the city the user travels to at the next time step. This means that to each row in the file there is a corresponding pair $(X_{t},X_{t+1})$. The stationarity assumption gives that for all $t$ there is a transition density $p$ such that $P(X_{t+1} = y | X_t = x) = p(x,y)$ (for all $x,y$). The transition matrix should be <code>n_cities</code> x <code>n_citites</code> in size.</li>
+<li>[2p] Use the transition matrix to compute out the stationary distribution.</li>
+<li>[2p] Given that we start in 'Aracaju (SE)' what is the probability that after 3 steps we will be back in 'Aracaju (SE)'?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number_of_cities</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">number_of_userCodes</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">number_of_observations</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This is a very useful function that you can use for part 2. You have seen this before when parsing the</span>
+<span class="c1"># pride and prejudice book.</span>
+
+<span class="k">def</span> <span class="nf">makeFreqDict</span><span class="p">(</span><span class="n">myDataList</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Make a frequency mapping out of a list of data.</span>
+
+<span class="sd">    Param myDataList, a list of data.</span>
+<span class="sd">    Return a dictionary mapping each unique data value to its frequency count.&#39;&#39;&#39;</span>
+
+    <span class="n">freqDict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># start with an empty dictionary</span>
+
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">myDataList</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">freqDict</span><span class="p">:</span> <span class="c1"># the data value already exists as a key</span>
+                <span class="n">freqDict</span><span class="p">[</span><span class="n">res</span><span class="p">]</span> <span class="o">=</span> <span class="n">freqDict</span><span class="p">[</span><span class="n">res</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># add 1 to the count using sage integers</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># the data value does not exist as a key value</span>
+            <span class="n">freqDict</span><span class="p">[</span><span class="n">res</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># add a new key-value pair for this new data value, frequency 1</span>
+
+    <span class="k">return</span> <span class="n">freqDict</span> <span class="c1"># return the dictionary created</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">unique_cities</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cities</span><span class="p">))</span> <span class="c1"># The unique cities</span>
+<span class="n">n_cities</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_cities</span><span class="p">)</span> <span class="c1"># The number of unique citites</span>
+
+<span class="c1"># Count the different transitions</span>
+<span class="n">transitions</span> <span class="o">=</span> <span class="n">XXX</span> <span class="c1"># A list containing tuples ex: (&#39;Aracaju (SE)&#39;,&#39;Rio de Janeiro (RJ)&#39;) of all transitions in the text</span>
+<span class="n">transition_counts</span> <span class="o">=</span> <span class="n">XXX</span> <span class="c1"># A dictionary that counts the number of each transition </span>
+<span class="c1"># ex: (&#39;Aracaju (SE)&#39;,&#39;Rio de Janeiro (RJ)&#39;):4</span>
+<span class="n">indexToCity</span> <span class="o">=</span> <span class="n">XXX</span> <span class="c1"># A dictionary that maps the n-1 number to the n:th unique_city,</span>
+<span class="c1"># ex: 0:&#39;Aracaju (SE)&#39;</span>
+<span class="n">cityToIndex</span> <span class="o">=</span> <span class="n">XXX</span> <span class="c1"># The inverse function of indexToWord, </span>
+<span class="c1"># ex: &#39;Aracaju (SE)&#39;:0</span>
+
+<span class="c1"># Part 3, finding the maximum likelihood estimate of the transition matrix</span>
+
+<span class="n">transition_matrix</span> <span class="o">=</span> <span class="n">XXX</span> <span class="c1"># a numpy array of size (n_cities,n_cities)</span>
+
+<span class="c1"># The transition matrix should be ordered in such a way that</span>
+<span class="c1"># p_{&#39;Aracaju (SE)&#39;,&#39;Rio de Janeiro (RJ)&#39;} = transition_matrix[cityToIndex[&#39;Aracaju (SE)&#39;],cityToIndex[&#39;Rio de Janeiro (RJ)&#39;]]</span>
+<span class="c1"># and represents the probability of travelling Aracaju (SE)-&gt;Rio de Janeiro (RJ)</span>
+
+<span class="c1"># Make sure that the transition_matrix does not contain np.nan from division by zero for instance</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This should be a numpy array of length n_cities which sums to 1 and is all positive</span>
+
+<span class="n">stationary_distribution_problem2</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Compute the return probability for part 3 of PROBLEM 2</span>
+
+<span class="n">return_probability_problem2</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h4 id="Local-Test-for-Assignment-2,-PROBLEM-2">Local Test for Assignment 2, PROBLEM 2<a class="anchor-link" href="#Local-Test-for-Assignment-2,-PROBLEM-2">&#182;</a></h4><p>Evaluate cell below to make sure your answer is valid.                             You <strong>should not</strong> modify anything in the cell below when evaluating it to do a local test of                             your solution.
+You may need to include and evaluate code snippets from lecture notebooks in cells above to make the local test work correctly sometimes (see error messages for clues). This is meant to help you become efficient at recalling materials covered in lectures that relate to this problem. Such local tests will generally not be available in the exam.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Once you have created all your functions, you can make a small test here to see</span>
+<span class="c1"># what would be generated from your model.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_cities</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">start</span><span class="p">[</span><span class="n">cityToIndex</span><span class="p">[</span><span class="s1">&#39;Aracaju (SE)&#39;</span><span class="p">],</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">current_pos</span> <span class="o">=</span> <span class="n">start</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">random_word_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_cities</span><span class="p">),</span><span class="n">p</span><span class="o">=</span><span class="n">current_pos</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">current_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">current_pos</span><span class="p">[</span><span class="n">random_word_index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">indexToCity</span><span class="p">[</span><span class="n">random_word_index</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">)</span>
+    <span class="n">current_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_pos</span><span class="o">.</span><span class="n">T</span><span class="nd">@transition_matrix</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Assignment-2,-PROBLEM-3">Assignment 2, PROBLEM 3<a class="anchor-link" href="#Assignment-2,-PROBLEM-3">&#182;</a></h2><p>Maximum Points = 4</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Derive the maximum likelihood estimate for $n$ IID samples from a random variable with the following probability density function:
+$$
+f(x; \lambda) = \frac{1}{24} \lambda^5 x^4 \exp(-\lambda x), \qquad \text{ where, } \lambda&gt;0, x &gt; 0
+$$</p>
+<p>You can solve the MLe by hand (using pencil paper or using key-strokes). Present your solution as the return value of a function called <code>def MLeForAssignment3Problem1(x)</code>, where <code>x</code> is a list of $n$ input data points.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># do not change the name of the function, just replace XXX with the appropriate expressions for the MLe</span>
+<span class="k">def</span> <span class="nf">MLeForAssignment2Problem3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;write comment of what this function does&#39;&#39;&#39;</span>
+    <span class="n">XXX</span> 
+    <span class="n">XXX</span>
+    <span class="k">return</span> <span class="n">XXX</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Assignment-2,-PROBLEM-4">Assignment 2, PROBLEM 4<a class="anchor-link" href="#Assignment-2,-PROBLEM-4">&#182;</a></h2><p>Maximum Points = 4</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Use the <strong>Multi-dimensional Constrained Optimisation</strong> example above (in <code>09.ipynb</code>) to numerically find the MLe for the mean and variance parameter based on <code>normallySimulatedDataSamples</code>, an array obtained by a specific simulation of $30$ IID samples from the $Normal(10,2)$ random variable.</p>
+<p>Recall that $Normal(\mu, \sigma^2)$ RV has the probability density function given by:</p>
+$$
+f(x ;\mu, \sigma) = \displaystyle\frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-1}{2\sigma^2}(x-\mu)^2\right)
+$$<p>The two parameters, $\mu \in \mathbb{R} := (-\infty,\infty)$ and $\sigma \in (0,\infty)$, are sometimes referred to as the location and scale parameters.</p>
+<p>You know that the log likelihood function for $n$ IID samples from a Normal RV with parameters $\mu$ and $\sigma$ simply follows from $\sum_{i=1}^n \log(f(x_i; \mu,\sigma))$, based on the IID assumption.</p>
+<p>NOTE: When setting bounding boxes for $\mu$ and $\sigma$ try to start with some guesses like $[-20,20]$ and $[0.1,5.0]$ and make it larger if the solution is at the boundary. Making the left bounding-point for $\sigma$ too close to $0.0$ will cause division by zero Warnings. Other numerical instabilities can happen in such iterative numerical solutions to the MLe. You need to be patient and learn by trial-and-error. You will see the mathematical theory in more details in a future course in scientific computing/optimisation. So don't worry too much now except learning to use it for our problems.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+<span class="c1"># do NOT change the next three lines</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123456</span><span class="p">)</span> <span class="c1"># set seed</span>
+<span class="c1"># simulate 30 IID samples drawn from Normal(10,2)RV</span>
+<span class="n">normallySimulatedDataSamples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span> 
+
+<span class="c1"># define the negative log likelihoo function you want to minimise by editing XXX</span>
+<span class="k">def</span> <span class="nf">negLogLklOfIIDNormalSamples</span><span class="p">(</span><span class="n">parameters</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;return the -log(likelihood) of normallySimulatedDataSamples with mean and var parameters&#39;&#39;&#39;</span>
+    <span class="n">mu_param</span><span class="o">=</span><span class="n">parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">sigma_param</span><span class="o">=</span><span class="n">parameters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">XXX</span>
+    <span class="n">XXX</span> <span class="c1"># add more or less lines as you need</span>
+    <span class="k">return</span> <span class="n">XXX</span> 
+
+<span class="c1"># you should only change XXX below and not anything else</span>
+<span class="n">parameter_bounding_box</span><span class="o">=</span><span class="p">((</span><span class="n">XXX</span><span class="p">,</span> <span class="n">XXX</span><span class="p">),</span> <span class="p">(</span><span class="n">XXX</span><span class="p">,</span> <span class="n">XXX</span><span class="p">))</span> <span class="c1"># specify the constraints for each parameter - some guess work...</span>
+<span class="n">initial_arguments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">XXX</span><span class="p">,</span> <span class="n">XXX</span><span class="p">])</span> <span class="c1"># point in 2D to initialise the minimize algorithm</span>
+<span class="n">result_Ass2Prob4</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">XXX</span><span class="p">,</span> <span class="n">initial_arguments</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">parameter_bounding_box</span><span class="p">,</span> <span class="n">XXX</span><span class="p">)</span> 
+<span class="c1"># call the minimize method above finally! you need to play a bit to get initial conditions and bounding box ok</span>
+<span class="n">result_Ass2Prob4</span>
 </pre></div>
 
     </div>
