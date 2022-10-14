@@ -22,6 +22,11 @@ These notebooks are numbered according to which lecture they coincide with and w
 05. [05-Risk](05-Risk.md)
 06. [06-Fundamentals_of_estimation](06-Fundamentals_of_estimation.md)
 07. [07-Estimation_Likelihood](07-Estimation_Likelihood.md)
+
+### Problem Solving Sessions
+
+These notebooks are numbered according to which problem solving session they coincide with.
+
 02. [02-ProbSS1](02-ProbSS1.md)
 03. [03-ProbSS2](03-ProbSS2.md)
 
