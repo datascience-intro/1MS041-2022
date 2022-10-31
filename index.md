@@ -23,6 +23,7 @@ These notebooks are numbered according to which lecture they coincide with and w
 06. [06-Fundamentals_of_estimation](06-Fundamentals_of_estimation.md)
 07. [07-Estimation_Likelihood](07-Estimation_Likelihood.md)
 07. [07-Optimization](07-Optimization.md)
+08. [08-PRNG](08-PRNG.md)
 
 ### Problem Solving Sessions
 
