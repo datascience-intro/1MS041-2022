@@ -13185,18 +13185,19 @@ $$p_0(x) = \frac{\pi}{2}|\sin(2\pi x)|, \quad x \in [0,1] \enspace .$$<p>Using t
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem1_accept_reject</span><span class="p">(</span><span class="n">uniformGenerator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem1_accept_reject</span><span class="p">(</span><span class="n">uniformGenerator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_iterations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Takes a generator that produces uniform pseudo random [0,1] numbers </span>
 <span class="sd">    and produces samples from (pi/2)*abs(sin(x*2*pi)) using an Accept-Reject</span>
-<span class="sd">    sampler with the uniform distribution as the proposal distribution</span>
+<span class="sd">    sampler with the uniform distribution as the proposal distribution.</span>
+<span class="sd">    Runs n_iterations</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    -------------</span>
 <span class="sd">    generator : a function of the type generator(size,seed) that produces uniform pseudo random</span>
 <span class="sd">    numbers from [0,1]</span>
 <span class="sd">    seed : the seed to be used in the generator provided</span>
-<span class="sd">    size : an integer denoting how many samples should be produced</span>
+<span class="sd">    n_iterations : an integer denoting how many attempts should be made in the accept-reject sampler</span>
 <span class="sd">    </span>
 <span class="sd">    Returns</span>
 <span class="sd">    --------------</span>
