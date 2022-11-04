@@ -109,3 +109,21 @@ def plotEDF(edf,  force_display=True):
     if (force_display):
         # Force displaying
         plt.show()
+
+def linConGen(m, a, b, x0, n):
+    '''A linear congruential sequence generator.
+
+    Param m is the integer modulus to use in the generator.
+    Param a is the integer multiplier.
+    Param b is the integer increment.
+    Param x0 is the integer seed.
+    Param n is the integer number of desired pseudo-random numbers.
+
+    Returns a list of n pseudo-random integer modulo m numbers.'''
+
+    x = x0 # the seed
+    retValue = [x % m]  # start the list with x=x0
+    for i in range(2, n+1, 1):
+        x = (a * x + b) % m # the generator, using modular arithmetic
+        retValue.append(x) # append the new x to the list
+    return retValue
