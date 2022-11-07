@@ -50,10 +50,20 @@ def plotEMF(numRelFreqPairs, force_display = True):
         plt.show()
 
 def makeFreq(data_sequence):
+    """
+    Takes a data_sequence in the form of iterable and returns a
+    numpy array of the form [keys,counts] where the keys
+    are the unique values in data_sequence and counts are how
+    many time they appeared
+    """
     import numpy as np
     data = np.array(data_sequence)
-    (keys,counts) = np.unique(data,return_counts=True)
-    return np.stack([keys,counts],axis=-1)
+    if (len(data.shape) == 2):
+        (keys,counts) = np.unique(data.T,axis=0,return_counts=True)
+        return np.concatenate([keys,counts.reshape(-1,1)],axis=1)
+    else:
+        (keys,counts) = np.unique(data,return_counts=True)
+        return np.stack([keys,counts],axis=-1)
 
 def makeEMF(data_sequence):
     from Utils import makeFreq
