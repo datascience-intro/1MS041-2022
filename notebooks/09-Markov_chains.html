@@ -13582,10 +13582,10 @@ $$ \mathbf{p}^{(n)} = \mathbf{p}^{(n-1)} \ \mathbf{P} $$$$ \mathbf{p}^{(n)} = \m
 
  
  
-<div id="4dcad3a0-72e1-4ce2-9525-6ea60bbdc797"></div>
+<div id="0f9abfb2-1e08-40e5-94f9-22254325f684"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#4dcad3a0-72e1-4ce2-9525-6ea60bbdc797');
+var element = $('#0f9abfb2-1e08-40e5-94f9-22254325f684');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "47fb44f558074ecdb73147e7c1858bba", "version_major": 2, "version_minor": 0}
@@ -13883,10 +13883,10 @@ $$\left( \mathbf{s}_0 , \mathbf{s}_1 \right) = \left( 5/6 , 1/6 \right) = \left(
 
  
  
-<div id="810df77b-5ea2-4410-9d36-17483b20b12b"></div>
+<div id="acc5feaf-433f-4a63-9f45-86bdc7e82216"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#810df77b-5ea2-4410-9d36-17483b20b12b');
+var element = $('#acc5feaf-433f-4a63-9f45-86bdc7e82216');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "9f9e3413863b4879bcb32bb3c04dada2", "version_major": 2, "version_minor": 0}
@@ -14230,10 +14230,12 @@ $$\widehat{\mathbf{P}}=\begin{bmatrix} \hat{p}_{0,0} &amp; \hat{p}_{0,1}\\ \hat{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">evals</span><span class="p">,</span><span class="n">evecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">estimateMatrix</span><span class="p">(</span><span class="n">n_00</span><span class="p">,</span><span class="n">n_01</span><span class="p">,</span><span class="n">n_10</span><span class="p">,</span><span class="n">n_11</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">evals</span><span class="p">,</span><span class="n">evecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">estimateMatrix</span><span class="p">(</span><span class="n">n_00</span><span class="p">,</span><span class="n">n_01</span><span class="p">,</span><span class="n">n_10</span><span class="p">,</span><span class="n">n_11</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="c1"># During the lecture I forgot to transpose the transition matrix above</span>
+<span class="c1"># which I should have due to the computation I did on the board</span>
 </pre></div>
 
     </div>
