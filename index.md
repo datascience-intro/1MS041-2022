@@ -44,3 +44,4 @@ These notebooks are numbered according to which problem solving session they coi
 
 1. [Assignment_1](Assignment_1.md)
 2. [Assignment_2](Assignment_2.md)
+3. [Assignment_3](Assignment_3.md)
