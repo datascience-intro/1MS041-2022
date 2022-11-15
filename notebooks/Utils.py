@@ -137,3 +137,22 @@ def linConGen(m, a, b, x0, n):
         x = (a * x + b) % m # the generator, using modular arithmetic
         retValue.append(x) # append the new x to the list
     return retValue
+
+def scatter3d(x,y,z,c=None,size=2,fig=None):
+    import plotly.graph_objects as go
+    import numpy as np
+
+
+    if (c == None):
+        data = go.Scatter3d(x=x, y=y, z=z,mode='markers',marker=dict(size=size))
+        if (fig):
+            fig.add_trace(data)
+        else:
+            fig = go.Figure(data=[data])
+    else:
+        data = go.Scatter3d(x=x, y=y, z=z,mode='markers',marker=dict(size=size,color=c))
+        if (fig):
+            fig.add_trace(data)
+        else:
+            fig = go.Figure(data=[data])
+    return fig
