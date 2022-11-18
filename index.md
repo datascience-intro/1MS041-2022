@@ -25,6 +25,7 @@ These notebooks are numbered according to which lecture they coincide with and w
 07. [07-Optimization](07-Optimization.md)
 08. [08-PRNG](08-PRNG.md)
 09. [09-Markov_chains](09-Markov_chains.md)
+10. [10-Pattern_Recognition](10-Pattern_Recognition.md)
 
 ### Problem Solving Sessions
 
