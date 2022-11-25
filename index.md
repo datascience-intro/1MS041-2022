@@ -3,6 +3,8 @@
 
 You can download the Lecture notes [here](https://datascience-intro.github.io/1MS041-2022/Files/LectureNotes1MS041.pdf).
 
+Precision Recall survey [here](https://datascience-intro.github.io/1MS041-2022/Files/AveragePrecision.pdf)
+
 
 ### Introductory SageMath Jupyter .ipynb Notebooks
 These notebooks contain the basic theory of how to work with Sagemath and python, that will be needed in this course.
@@ -36,6 +38,7 @@ These notebooks are numbered according to which problem solving session they coi
 03. [03-ProbSS2](03-ProbSS2.md)
 07. [07-ProbSS4_Estimation](07-ProbSS4_Estimation.md)
 08. [08-ProbSS5](08-ProbSS5.md)
+11. [11-ProbSS06](11-ProbSS06.md)
 
 ### Starting package
 * Download the [Starting package](Files/first_lecture_and_data.zip)

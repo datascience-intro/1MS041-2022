@@ -156,3 +156,108 @@ def scatter3d(x,y,z,c=None,size=2,fig=None):
         else:
             fig = go.Figure(data=[data])
     return fig
+
+def classification_report_interval(
+    y_true,
+    y_pred,
+    labels=None,
+    alpha = 0.01,
+    union_bound_correction=True
+):
+    """Produces a classification report with precision, recall and accuracy
+    It also uses Hoeffdings inequality to produce confidence intervals around
+    each measurement. We can do this with or without multiple measurement
+    correction (union bound correction).
+
+    Example output is:
+                labels           precision             recall
+
+               0.0  0.88 : [0.50,1.00] 0.40 : [0.15,0.65]
+               1.0  0.56 : [0.34,0.78] 0.93 : [0.65,1.00]
+
+          accuracy                                        0.64 : [0.45,0.83]
+
+    Parameters:
+    y_true                          -- The true labels
+    y_pred                          -- The predicted labels
+    labels                          -- TODO
+    alpha[0.01]                     -- The confidence level of the intervals
+    union_bound_correction[True]    -- If we should compensate with the union bound because we
+                                    have multiple intervals to compute in order to keep the level
+                                    of confidence for all intervals jointly.
+
+    Returns:
+    a printable string.
+    """
+    import numpy as np
+    
+    def precision_recall(y_true,
+        y_pred,
+        labels=None,alpha=0.01, correction=1):
+        p = []
+        r = []
+        f1 = []
+        support = []
+        for label in labels:
+            y_true_pred_label = y_true[y_pred == label]
+            precision = np.mean(y_true_pred_label == label)
+            delta = (1/np.sqrt(len(y_true_pred_label)))*np.sqrt((1/2)*np.log(2*correction/alpha))
+            p.append("%.2f : [%.2f,%.2f]" % (precision, np.maximum(precision-delta,0),np.minimum(precision+delta,1)))
+
+            y_pred_true_label = y_pred[y_true == label]
+            recall = np.mean(y_pred_true_label == label)
+            delta = (1/np.sqrt(len(y_pred_true_label)))*np.sqrt((1/2)*np.log(2*correction/alpha))
+            r.append("%.2f : [%.2f,%.2f]" % (recall, np.maximum(recall-delta,0),np.minimum(recall+delta,1)))
+
+        return (p,r)
+
+    def accuracy_interval(y_true,y_pred,alpha=0.01,correction=1):
+        acc = np.mean(y_true == y_pred)
+        delta = (1/np.sqrt(len(y_true)))*np.sqrt((1/2)*np.log(2*correction/alpha))
+        return "%.2f : [%.2f,%.2f]" % (acc, np.maximum(acc-delta,0),np.minimum(acc+delta,1))
+
+    digits = 18
+    target_names = None
+    if labels is None:
+        labels = list(set(y_true).union(set(y_pred)))
+        labels_given = False
+    else:
+        labels = np.asarray(labels)
+        labels_given = True
+
+    target_names = ["%s" % l for l in labels]
+
+    headers = ["precision", "recall"]
+    # compute per-class results without averaging
+    # Simple correction using the union bound
+    # We are computing 2 intervals for each label for precision and recall
+    # In addition we are computing 2 intervals for accuracy
+    # This is in total 2*n_labels+2
+    if (union_bound_correction):
+        correction = 2*len(labels)+2
+    else:
+        correction=1
+    p, r = precision_recall(
+        y_true,
+        y_pred,
+        labels=labels,
+        alpha=alpha,
+        correction=correction
+    )
+
+    rows = zip(target_names, p, r)
+
+    name_width = max(len(cn) for cn in target_names)
+    width = max(name_width, digits)
+    head_fmt = "{:>{width}s} " + " {:>{digits}}" * len(headers)
+    report = head_fmt.format("labels", *headers, width=width,digits=digits)
+    report += "\n\n"
+    row_fmt = "{:>{width}s} " + " {:>{digits}s}" * 2 + "\n"
+    for row in rows:
+        report += row_fmt.format(*row, width=width, digits=digits)
+    row_fmt_acc = "{:>{width}s} " + " {:>{digits}s}" * 2 + " {:>{digits}s}""\n"
+    report += "\n"
+    accuracy = accuracy_interval(y_true,y_pred,alpha=alpha,correction=correction)
+    report+=row_fmt_acc.format(*("accuracy","","",accuracy),width=width,digits=digits)
+
+    return report
