@@ -95,22 +95,41 @@ def emfToEdf(emf):
     edf = np.stack([keys,cumFreqs],axis=-1)
     return edf
 
-def plotEDF(edf,  force_display=True):
+def plotEDF(edf,  force_display=True,points_at_jump=True, confidence_band=False, alpha=0.95):
+    """
+    Plots the empirical distribution function
+
+    Parameters
+    ----------
+    edf : an empirical distribution function as provided by makeEDF
+    force_display[True] : Will run plt.show()
+    points_at_jump[True] : Will draw a dot at the jump positions
+    confidence_band[False] : Will plot the confidence band using the DKW inequality
+    alpha[0.95] : The confidence level for the confidence band
+    """
     #Plotting using matplotlib
     import matplotlib.pyplot as plt
-
-    plt.figure(figsize=(5,5))
-    #plt.gca().spines['bottom'].set_position('zero')
-    #plt.gca().spines['left'].set_position('zero')
-    #plt.gca().spines['top'].set_visible(False)
-    #plt.gca().spines['right'].set_visible(False)
 
     keys = edf[:,0]
     cumFreqs = edf[:,1]
 
-    plt.scatter(keys,cumFreqs)
+    if (points_at_jump):
+        plt.scatter(keys,cumFreqs)
     plt.hlines(cumFreqs[:-1],keys[:-1],keys[1:])
     plt.vlines(keys[1:],cumFreqs[:-1],cumFreqs[1:],linestyle=':')
+
+    if (confidence_band):
+        import numpy as np
+        def calcEpsilon(alpha,n):
+            return (1/np.sqrt(n))*np.sqrt((1/2)*np.log(2/(1-alpha)))
+
+        epResidual = calcEpsilon(alpha,len(cumFreqs))
+        plt.fill_between(keys,
+                     np.maximum(cumFreqs-epResidual,0),
+                     np.minimum(cumFreqs+epResidual,1),
+                     alpha=0.4,
+                     color='green',
+                     step="post")
     #plt.step(keys,cumFreqs,where='post')
 
     #Title
@@ -190,7 +209,7 @@ def classification_report_interval(
     a printable string.
     """
     import numpy as np
-    
+
     def precision_recall(y_true,
         y_pred,
         labels=None,alpha=0.01, correction=1):
