@@ -13138,7 +13138,7 @@ then $C$ denotes the cost of a randomly chosen patient. In the above we are esti
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.io</span> <span class="k">as</span> <span class="nn">so</span>
@@ -13154,71 +13154,6 @@ then $C$ denotes the cost of a randomly chosen patient. In the above we are esti
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">~/opt/miniconda3/envs/sage_new/lib/python3.9/site-packages/scipy/io/matlab/_mio.py</span> in <span class="ansi-cyan-fg">_open_file</span><span class="ansi-blue-fg">(file_like, appendmat, mode)</span>
-<span class="ansi-green-intense-fg ansi-bold">     38</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 39</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> open<span class="ansi-blue-fg">(</span>file_like<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">     40</span>     <span class="ansi-green-fg">except</span> OSError <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/mammography.mat&#39;
-
-During handling of the above exception, another exception occurred:
-
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/5g/369s7l6x1g583_lv3wwblvr00000gq/T/ipykernel_38368/1705587044.py</span> in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">import</span> scipy<span class="ansi-blue-fg">.</span>io <span class="ansi-green-fg">as</span> so
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">import</span> numpy <span class="ansi-green-fg">as</span> np
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>data <span class="ansi-blue-fg">=</span> so<span class="ansi-blue-fg">.</span>loadmat<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;data/mammography.mat&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> 
-<span class="ansi-green-intense-fg ansi-bold">      6</span> np<span class="ansi-blue-fg">.</span>random<span class="ansi-blue-fg">.</span>seed <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span>
-
-<span class="ansi-green-fg">~/opt/miniconda3/envs/sage_new/lib/python3.9/site-packages/scipy/io/matlab/_mio.py</span> in <span class="ansi-cyan-fg">loadmat</span><span class="ansi-blue-fg">(file_name, mdict, appendmat, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    222</span>     &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    223</span>     variable_names <span class="ansi-blue-fg">=</span> kwargs<span class="ansi-blue-fg">.</span>pop<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;variable_names&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 224</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">with</span> _open_file_context<span class="ansi-blue-fg">(</span>file_name<span class="ansi-blue-fg">,</span> appendmat<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    225</span>         MR<span class="ansi-blue-fg">,</span> _ <span class="ansi-blue-fg">=</span> mat_reader_factory<span class="ansi-blue-fg">(</span>f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    226</span>         matfile_dict <span class="ansi-blue-fg">=</span> MR<span class="ansi-blue-fg">.</span>get_variables<span class="ansi-blue-fg">(</span>variable_names<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/opt/miniconda3/envs/sage_new/lib/python3.9/contextlib.py</span> in <span class="ansi-cyan-fg">__enter__</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    117</span>         <span class="ansi-green-fg">del</span> self<span class="ansi-blue-fg">.</span>args<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>kwds<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>func
-<span class="ansi-green-intense-fg ansi-bold">    118</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 119</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> next<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>gen<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    120</span>         <span class="ansi-green-fg">except</span> StopIteration<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    121</span>             <span class="ansi-green-fg">raise</span> RuntimeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;generator didn&#39;t yield&#34;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
-
-<span class="ansi-green-fg">~/opt/miniconda3/envs/sage_new/lib/python3.9/site-packages/scipy/io/matlab/_mio.py</span> in <span class="ansi-cyan-fg">_open_file_context</span><span class="ansi-blue-fg">(file_like, appendmat, mode)</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> <span class="ansi-blue-fg">@</span>contextmanager
-<span class="ansi-green-intense-fg ansi-bold">     16</span> <span class="ansi-green-fg">def</span> _open_file_context<span class="ansi-blue-fg">(</span>file_like<span class="ansi-blue-fg">,</span> appendmat<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;rb&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 17</span><span class="ansi-red-fg">     </span>f<span class="ansi-blue-fg">,</span> opened <span class="ansi-blue-fg">=</span> _open_file<span class="ansi-blue-fg">(</span>file_like<span class="ansi-blue-fg">,</span> appendmat<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     18</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     19</span>         <span class="ansi-green-fg">yield</span> f
-
-<span class="ansi-green-fg">~/opt/miniconda3/envs/sage_new/lib/python3.9/site-packages/scipy/io/matlab/_mio.py</span> in <span class="ansi-cyan-fg">_open_file</span><span class="ansi-blue-fg">(file_like, appendmat, mode)</span>
-<span class="ansi-green-intense-fg ansi-bold">     43</span>             <span class="ansi-green-fg">if</span> appendmat <span class="ansi-green-fg">and</span> <span class="ansi-green-fg">not</span> file_like<span class="ansi-blue-fg">.</span>endswith<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;.mat&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     44</span>                 file_like <span class="ansi-blue-fg">+=</span> <span class="ansi-blue-fg">&#39;.mat&#39;</span>
-<span class="ansi-green-fg">---&gt; 45</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> open<span class="ansi-blue-fg">(</span>file_like<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">     46</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     47</span>             raise OSError(
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/mammography.mat&#39;</pre>
-</div>
-</div>
-
 </div>
 </div>
 
