@@ -280,3 +280,106 @@ def classification_report_interval(
     report+=row_fmt_acc.format(*("accuracy","","",accuracy),width=width,digits=digits)
 
     return report
+
+def bennett_epsilon(n,b,sigma,alpha):
+    """
+    Calculates the epsilon for P(|X - E[X]| >= epsilon) < alpha
+    using Bennets inequality.
+
+    It also prints out the approximation error in inverting the function in Bennets inequality
+
+    Parameters
+    ----------
+    n : the number of samples
+    b : |X| <= b
+    sigma : the standard deviation of X
+    alpha : the significance level
+
+    Returns
+    -----------
+    epsilon
+    """
+    import scipy.optimize as so
+    import numpy as np
+
+    h = lambda u: (1+u)*np.log(1+u)-u
+    f = lambda epsilon: np.exp(-n*sigma**2/b**2*h(b*epsilon/sigma**2))-alpha/2
+    ans = so.fsolve(f,0.002)
+    epsilon = np.abs(ans[0])
+    print("Numerical error", f(epsilon))
+    return epsilon
+
+def epsilon_bounded(n,b,alpha):
+    """
+    Calculates the epsilon for P(|X - E[X]| >= epsilon) < alpha
+    using Hoeffdings inequality.
+
+    Parameters
+    ----------
+    n : the number of samples
+    b : |X| <= b
+    alpha : the significance level
+
+    Returns
+    -----------
+    epsilon
+    """
+    import numpy as np
+    return b*np.sqrt(-1/(2*n)*np.log((alpha)/2))
+
+def print_confidence_interval(point_estimate,epsilon,min_value=None,max_value=None):
+    """
+    Simply prints [point_estimate-epsilon,point_estimate+epsilon]
+
+    Parameters
+    ----------
+    point_estimate : the center of the interval
+    epsilon : the half interval length
+    min_value : replace (point_estimate-epsilon) with max(point_estimate-epsilon,min_value)
+    max_value : replace (point_estimate-epsilon) with min(point_estimate-epsilon,max_value)
+    """
+    import numpy as np
+    if (min_value != None):
+        l_edge = np.maximum(point_estimate-epsilon,min_value)
+    else:
+        l_edge = point_estimate-epsilon
+
+    if (max_value != None):
+        r_edge = np.minimum(point_estimate+epsilon,max_value)
+    else:
+        r_edge = point_estimate+epsilon
+
+    print("[%.2f,%.2f]" % (l_edge,r_edge))
+
+def train_test_validation(X,Y,test_size=0.2,validation_size=0.2,random_state=None,shuffle=True):
+    """
+    Performs a train test validation split of the data [train_data,test_data,validation_data]
+
+    Parameters:
+    -----------
+    X : The input X, shape (n_samples,n_features)
+    Y : The input labells, shape (n_samples)
+    test_size : the proportion of data that should be test data
+    validation_size : the proportion of data that should be validation data
+    random_state : the random state variable passed through to sklearns train_test_split
+
+    Returns:
+    ----------
+    X_train, X_test, X_valid, Y_train, Y_test, Y_valid
+
+    Examples:
+    ----------
+    >>> X_train, X_test, X_valid, Y_train, Y_test, Y_valid = train_test_validation(X,Y,test_size=0.25,validation_size=0.25)
+    """
+    from sklearn.model_selection import train_test_split
+
+    X_train,X_tt,Y_train,Y_tt = train_test_split(X,Y,
+                                                 test_size=test_size+validation_size,
+                                                 random_state=random_state,
+                                                 shuffle=shuffle)
+    X_test,X_valid,Y_test,Y_valid = train_test_split(X_tt,Y_tt,
+                                                     test_size=(validation_size)/(test_size + validation_size),
+                                                     random_state=random_state,
+                                                     shuffle=shuffle)
+
+    return X_train, X_test, X_valid, Y_train, Y_test, Y_valid
