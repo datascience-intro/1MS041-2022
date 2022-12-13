@@ -40,6 +40,7 @@ These notebooks are numbered according to which problem solving session they coi
 07. [07-ProbSS4_Estimation](07-ProbSS4_Estimation.md)
 08. [08-ProbSS5](08-ProbSS5.md)
 11. [11-ProbSS06](11-ProbSS06.md)
+12. [12-ProbSS07](12-ProbSS07.md)
 
 ### Starting package
 * Download the [Starting package](Files/first_lecture_and_data.zip)
