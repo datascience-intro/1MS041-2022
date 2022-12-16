@@ -30,6 +30,7 @@ These notebooks are numbered according to which lecture they coincide with and w
 10. [10-Pattern_Recognition](10-Pattern_Recognition.md)
 11. [11-Training_Testing_Metrics](11-Training_Testing_Metrics.md)
 12. [12-Regression](12-Regression.md)
+13. [13-Extra_Topics](13-Extra_Topics.md)
 
 ### Problem Solving Sessions
 
